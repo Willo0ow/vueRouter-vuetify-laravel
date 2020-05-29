@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <navbar></navbar>
-    </div>
+    <v-app orange lighten-4> 
+                    <router-view></router-view>
+    </v-app>
 
 </template>
 

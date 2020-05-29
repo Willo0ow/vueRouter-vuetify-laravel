@@ -68,20 +68,8 @@
     <body>
     
 
-            <div id="app" style="width: 100%; height:80%;">
-                <v-app class="theme-dark"> 
-<!--                     <example-component></example-component>
-                    <v-spacer></v-spacer>
-                    <main-component></main-component> -->
-                    <router-view></router-view>
-                    <v-spacer></v-spacer>
-                    <footer>
-                        <ul>
-                            <li><router-link to="/">Main page -ex comp</router-link></li>
-                            <li><router-link to="/dummy">Dummy</router-link></li>
-                        </ul>
-                    </footer>
-                </v-app>
+            <div id="app" style="width: 100%">
+                <app-comp></app-comp>
             </div>
             
 
