@@ -25,8 +25,9 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('main-comp', require('./components/Main.vue').default);
 Vue.component('dummy', require('./components/Dummy.vue').default);
-Vue.component('navbar', require('./components/Navbar.vue').default);
-Vue.component('app-comp', require('./components/App.vue').default);
+Vue.component('sidebar', require('./components/Sidebar.vue').default);
+
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -46,15 +47,25 @@ const router = new VueRouter({
             path:'/',
             name: 'main-comp',
             component: require('./components/Main.vue').default
+        },
+        {
+            path:'/dummy',
+            name: 'dummy',
+            component: require('./components/Dummy.vue').default
         }
+
     ]
-})
+});
 const app = new Vue({
     router,
     vuetify: new Vuetify(),
     data(){
         return{
-            drawer:false
+
         }
     },
+    computed:{
+        szer(){return window.innerWidth},
+        wys(){return window.innerHeight}
+    }
 }).$mount('#app')
