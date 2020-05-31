@@ -7,9 +7,10 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-        <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+<!--         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet"> -->
+        <!-- <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet"> -->
+        <link href="{{asset('css/app.css')}}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -63,22 +64,8 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-            .backg{
-                background-image: url('/images/Logo.png');
-                background-size: contain;
-                background-position:center;
-            }
-            .back:before {
-                content: ' ';
-                display: block;
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-                opacity: 0.2;
-                background-image: url('/images/Logo.png');
+            body{
+                background-image: url('/images/log.png');
                 background-size: contain;
                 background-position:center;
                 background-repeat: no-repeat;
@@ -87,18 +74,18 @@
                 -moz-background-size: contain;
                 -webkit-background-size: contain;
             }
-            .move{
-                position: relative;
-                left: 56px;
-            }
         </style>
     </head>
     <body>
 
-            <div id="app" class="back">
+            <div id="app">
                 <v-app style="background: none;">
                     <sidebar></sidebar>
-                    <router-view></router-view>
+                    <v-content>
+
+                            <router-view></router-view>
+
+                    </v-content>
                 </v-app>
             </div>
             

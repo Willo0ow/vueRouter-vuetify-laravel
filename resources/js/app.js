@@ -22,11 +22,12 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('main-comp', require('./components/Main.vue').default);
-Vue.component('dummy', require('./components/Dummy.vue').default);
-Vue.component('sidebar', require('./components/Sidebar.vue').default);
-
+const example = Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+const main = Vue.component('main-comp', require('./components/Main.vue').default);
+const dummy = Vue.component('dummy', require('./components/Dummy.vue').default);
+const sidebar = Vue.component('sidebar', require('./components/Sidebar.vue').default);
+const planowanie = Vue.component('planowanie', require('./components/Planowanie.vue').default);
+const orderset = Vue.component('planowanie', require('./components/Orderset.vue').default);
 
 
 /**
@@ -34,6 +35,7 @@ Vue.component('sidebar', require('./components/Sidebar.vue').default);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
 import Vuetify from 'vuetify';
 import VueRouter from 'vue-router'
 import ExampleComponent from '../js/components/ExampleComponent'
@@ -46,12 +48,22 @@ const router = new VueRouter({
         {
             path:'/',
             name: 'main-comp',
-            component: require('./components/Main.vue').default
+            component: main
         },
         {
             path:'/dummy',
             name: 'dummy',
-            component: require('./components/Dummy.vue').default
+            component: dummy
+        },
+        {
+            path:'/planowanie',
+            name: 'planowanie',
+            component: planowanie
+        },
+        {
+            path:'/orderset/:id',
+            name: 'orderset',
+            component: orderset
         }
 
     ]
@@ -61,7 +73,13 @@ const app = new Vue({
     vuetify: new Vuetify(),
     data(){
         return{
-
+            data:null,
+            ordersets:[
+                {id:1, date:'2020-05-20'},
+                {id:2, date:'2020-05-22'},
+                {id:3, date:'2020-05-25'},
+                {id:4, date:'2020-05-30'},
+            ]
         }
     },
     computed:{
